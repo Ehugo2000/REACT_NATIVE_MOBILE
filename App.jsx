@@ -17,11 +17,11 @@ const App = () => {
           options={{
             title: appTitle,
             headerStyle: {
-              backgroundColor: "purple",
+              backgroundColor: "black",
             },
             headerTitleStyle: {
               color: "white",
-              fontSize: 22
+              fontSize: 22,
             },
           }}
         />
