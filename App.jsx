@@ -8,7 +8,7 @@ import ArticleShow from "./components/ArticleShow";
 const Stack = createStackNavigator();
 
 const App = () => {
-  const { appTitle } = useSelector((state) => state);
+  const { appTitle, currentArticle } = useSelector((state) => state);
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -31,7 +31,7 @@ const App = () => {
           name="ArticleShow"
           component={ArticleShow}
           options={{
-            title: "My article",
+            title: currentArticle.title,
             headerStyle: {
               backgroundColor: "black",
             },
