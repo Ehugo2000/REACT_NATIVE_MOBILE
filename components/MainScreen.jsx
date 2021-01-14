@@ -5,7 +5,7 @@ import { StyleSheet, View, FlatList, Text } from "react-native";
 import Articles from "../modules/Articles";
 import ArticleIndexDetails from "./ArticleIndexDetails";
 
-const MainScreen = () => {
+const MainScreen = ({navigation}) => {
   const { articles } = useSelector((state) => state);
   useEffect(() => {
     Articles.index();
@@ -16,7 +16,7 @@ const MainScreen = () => {
       <FlatList
         data={articles}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <ArticleIndexDetails article={item} />}
+        renderItem={({ item }) => <ArticleIndexDetails navigation={navigation} article={item} />}
       />
     </View>
   );

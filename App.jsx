@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import MainScreen from "./components/MainScreen";
+import ArticleShow from "./components/ArticleShow";
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,22 @@ const App = () => {
             headerTitleStyle: {
               color: "white",
               fontSize: 22,
+              textAlign: "center"
+            },
+          }}
+        />
+        <Stack.Screen 
+          name="ArticleShow"
+          component={ArticleShow}
+          options={{
+            title: "My article",
+            headerStyle: {
+              backgroundColor: "black",
+            },
+            headerTitleStyle: {
+              color: "white",
+              fontSize: 22,
+              textAlign: "left"
             },
           }}
         />

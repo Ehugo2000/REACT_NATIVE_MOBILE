@@ -5,6 +5,12 @@ const rootReducer = (state, action) => {
         ...state,
         articles: action.payload.articles,
       };
+
+    case "SET_CURRENT_ARTICLE":
+      return {
+        ...state,
+        currentArticle: action.payload.article,
+      };
     default:
       return state;
   }
