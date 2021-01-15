@@ -4,6 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import MainScreen from "./app/components/MainScreen";
 import ArticleShow from "./app/components/ArticleShow";
+import {Button} from 'react-native'
+import LoginScreen from "./app/components/LoginScreen";
 
 const Stack = createStackNavigator();
 
@@ -15,7 +17,12 @@ const App = () => {
         <Stack.Screen
           name="Start"
           component={MainScreen}
-          options={{
+          options={(props) => ({
+            headerRight: () => {
+              return <Button title='Click me' 
+              onPress={() => props.navigation.navigate('Login')}
+              />
+            },
             title: appTitle,
             headerStyle: {
               backgroundColor: "black",
@@ -25,7 +32,7 @@ const App = () => {
               fontSize: 22,
               textAlign: "center"
             },
-          }}
+          })}
         />
         <Stack.Screen 
           name="ArticleShow"
@@ -42,6 +49,9 @@ const App = () => {
             },
           }}
         />
+        <Stack.Screen
+        name="Login"
+        component={LoginScreen}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
