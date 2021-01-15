@@ -1,5 +1,5 @@
 import axios from "axios";
-import store from "../state/store/store";
+import store from "../app/state/store/store";
 
 const API_URL = "https://newsroom-api.herokuapp.com/api";
 const Articles = {
